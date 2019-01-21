@@ -1,0 +1,33 @@
+server:
+  port: 8443
+  ssl:
+    key-store-type: PKCS12
+    # The path to the keystore containing the certificate
+    #key-store: classpath:keystore.p12]
+    key-store: keystore.p12
+    # The password used to generate the certificate
+    key-store-password: teste@10
+    # The alias mapped to the certificate
+    key-alias: spring-boot
+  
+security:
+  oauth2:
+    client:
+      clientId: 2017956551623869
+      clientSecret: #YOUR CLIENT SECRET GET FROM FACEBOOK
+      accessTokenUri: https://graph.facebook.com/oauth/access_token
+      userAuthorizationUri: https://www.facebook.com/dialog/oauth
+      tokenName: oauth_token
+      authenticationScheme: query
+      clientAuthenticationScheme: form 
+    resource:
+      userInfoUri: https://graph.facebook.com/me
+  require-ssl: true 
+  # The format used for the keystore 
+ 
+       
+spring:
+  main:
+    allow-bean-definition-overriding: true
+
+ 
